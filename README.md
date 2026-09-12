@@ -12,6 +12,25 @@ DOI: [10.1111/cgf.70564](https://doi.org/10.1111/cgf.70564)
 
 This repository provides an implementation of our dynamic wrinkling simulation framework, which extends tension-field wrinkles (TFW) to capture high-frequency dynamic wrinkling effects efficiently on coarse cloth meshes.
 
+> **Note on Upsampling:** The upsampling framework is currently missing from this repository and will be added soon.
+
+---
+
+## Getting the Code
+
+Clone the repository with the `--recursive` flag to automatically fetch all required submodules in `vendor/`:
+
+```bash
+git clone --recursive https://github.com/rupeshkmr/wrinkle-dynamics-code.git
+cd wrinkle-dynamics-code
+```
+
+If you have already cloned the repository without `--recursive`, initialize and update the submodules manually:
+
+```bash
+git submodule update --init --recursive
+```
+
 ---
 
 ## Dependencies
@@ -35,7 +54,7 @@ sudo apt-get install build-essential cmake \
 ### Bundled & Automatically Managed Dependencies
 - **Boost** (headers and filesystem library) is bundled under `vendor/boost/` so system Boost packages are not required.
 - **libigl** is fetched automatically via CMake `FetchContent` during the initial configuration.
-- Third-party modules for geometry processing, optimization, and visualization (`polyscope`, `TinyAD`, `LBFGSpp`, `SecondFundamentalForm`, `MeshLib`, `halfedge`) are included in `vendor/`.
+- Third-party modules for geometry processing, optimization, and visualization (`polyscope`, `TinyAD`, `LBFGSpp`, `SecondFundamentalForm`, `MeshLib`, `halfedge`, `tmd`, `Discregrid`, `dlib`) are managed in `vendor/`.
 
 ---
 
@@ -108,6 +127,13 @@ When running with `--checkpoint`, output files are saved into `checkpoints/<scen
 - `amplitudes`: Wrinkle amplitude values per face
 - `dphisPerFace`: Wrinkle direction and spatial frequency vectors per face
 - `energies`: System energy components per frame
+
+---
+
+## Acknowledgements
+
+- Portions of the code and simulation formulation build upon the reference implementation of **Wrinkled Tension Fields** ([zhenchen-jay/WrinkledTensionFields](https://github.com/zhenchen-jay/WrinkledTensionFields)). We gratefully acknowledge the authors for open-sourcing their codebase.
+- Several libraries in the `vendor/` directory (such as `halfedge`, `MeshLib`, `SecondFundamentalForm`, `tmd`, and `LBFGSpp`) are modified adaptations derived directly from or tailored for the [WrinkledTensionFields](https://github.com/zhenchen-jay/WrinkledTensionFields) framework.
 
 ---
 
