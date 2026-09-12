@@ -1,0 +1,27 @@
+[submodule "vendor/halfedge"]
+	path = vendor/halfedge
+	url = https://github.com/rupeshkmr/halfedge.git
+[submodule "vendor/polyscope"]
+	path = vendor/polyscope
+	url = https://github.com/nmwsharp/polyscope.git
+[submodule "vendor/TinyAD"]
+	path = vendor/TinyAD
+	url = https://github.com/patr-schm/TinyAD.git
+[submodule "vendor/SecondFundamentalForm"]
+	path = vendor/SecondFundamentalForm
+	url = https://github.com/rupeshkmr/SecondFundamentalForm.git
+[submodule "vendor/MeshLib"]
+	path = vendor/MeshLib
+	url = https://github.com/rupeshkmr/MeshLib.git
+[submodule "vendor/tmd"]
+	path = vendor/tmd
+	url = https://github.com/rupeshkmr/TriangleMeshDistance.git
+[submodule "vendor/LBFGSpp"]
+	path = vendor/LBFGSpp
+	url = https://github.com/rupeshkmr/LBFGSpp.git
+[submodule "vendor/Discregrid"]
+	path = vendor/Discregrid
+	url = https://github.com/InteractiveComputerGraphics/Discregrid.git
+[submodule "vendor/dlib"]
+	path = vendor/dlib
+	url = https://github.com/rupeshkmr/dlib.git

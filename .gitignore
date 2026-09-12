@@ -43,8 +43,3 @@ compare_checkpoints.py
 run_all.sh
 run_tfw.sh
 scripts/compare_upstream.sh
-
-# Vendor rules
-vendor/
-!vendor/CMakeLists.txt
-vendor/tmd
