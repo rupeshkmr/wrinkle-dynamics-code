@@ -1,0 +1,50 @@
+build/
+output/
+input_data/
+
+docs/generated/
+docs/doxygen-awesome-css/
+# IDEs
+.idea/
+cmake-build-debug/
+cmake-build*/
+.vscode/
+
+# Python / Caches
+.venv/
+.DS_Store
+**/.DS_Store
+*.ini
+*imgui.ini
+*__pycache__/
+*.pyc
+*.ipynb_checkpoints/
+
+# Tags / Tooling
+tags
+compile_commands.json
+.cache
+out
+perf.*
+ai/
+*.dg
+
+# Checkpoints and logs
+checkpoints/
+checkpoints_transfer/
+logs/
+baselines/
+
+# Internal research / AI tracking files
+CONTEXT.md
+FINDINGS.txt
+visual_compare*
+compare_checkpoints.py
+run_all.sh
+run_tfw.sh
+scripts/compare_upstream.sh
+
+# Vendor rules
+vendor/
+!vendor/CMakeLists.txt
+vendor/tmd

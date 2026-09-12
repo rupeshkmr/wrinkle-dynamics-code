@@ -1,0 +1,271 @@
+{
+    "Y": 12000,
+    "amp_dampingK": 0.05,
+    "animations": [
+        {
+            "keyframes": [
+                {
+                    "frame": 0,
+                    "rotation_euler": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "frame": 100,
+                    "rotation_euler": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "frame": 300,
+                    "rotation_euler": [
+                        10.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "frame": 500,
+                    "rotation_euler": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "frame": 700,
+                    "rotation_euler": [
+                        10.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "frame": 900,
+                    "rotation_euler": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "frame": 1100,
+                    "rotation_euler": [
+                        10.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "frame": 1300,
+                    "rotation_euler": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            ],
+            "target_obstacle": "cylinder_0"
+        },
+        {
+            "keyframes": [
+                {
+                    "frame": 0,
+                    "rotation_euler": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "frame": 100,
+                    "rotation_euler": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "frame": 300,
+                    "rotation_euler": [
+                        -10.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "frame": 500,
+                    "rotation_euler": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "frame": 700,
+                    "rotation_euler": [
+                        -10.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "frame": 900,
+                    "rotation_euler": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "frame": 1100,
+                    "rotation_euler": [
+                        -10.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "frame": 1300,
+                    "rotation_euler": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            ],
+            "target_obstacle": "cylinder_1"
+        }
+    ],
+    "cloth": {
+        "clamped_vertices_": [
+            [
+                8,
+                1,
+                1,
+                1
+            ]
+        ],
+        "clamped_vertices_motion_path": "",
+        "clamped_vertices_path": "",
+        "clamped_vertices_path_": "examples/assets/arm/arm_16x16_clampedVerts.txt",
+        "init_mesh_path_": "examples/assets/arm/armx_16x16_init.obj",
+        "mesh_path": "examples/assets/arm/arm_1000verts.obj",
+        "mesh_path_": "examples/assets/arm/armx_16x16_withseams.obj",
+        "name": "arm_rotating",
+        "seam_vertices_path": "",
+        "seam_vertices_path_": "examples/assets/arm/armx_16x16_seamVerts.txt",
+        "wrinkle_self_coll": {
+            "softness": 0
+        }
+    },
+    "dt": 0.008,
+    "forces": [
+        {
+            "name": "tfwstretch"
+        },
+        {
+            "name": "tfwbending"
+        },
+        {
+            "gravity": [
+                0,
+                -9.8,
+                0
+            ],
+            "name": "tfwgravity"
+        }
+    ],
+    "frictionK": 0.0,
+    "h": 0.001,
+    "max_iter": 10,
+    "mu": 0.1,
+    "name": "general simulation",
+    "obstacles": [
+        {
+            "Kfriction": 0.0,
+            "Kpenalty": 0.01,
+            "center": [
+                0,
+                0,
+                0
+            ],
+            "name": "ball",
+            "radius": 0.16,
+            "threshold": 0.0001,
+            "type": "SPHERE_"
+        },
+        {
+            "Kfriction": 10,
+            "Kpenalty": 0.01,
+            "axis": [
+                0,
+                0,
+                1
+            ],
+            "center": [
+                0,
+                0,
+                1
+            ],
+            "height": 2,
+            "name": "cylinder_0",
+            "radius": 0.13,
+            "threshold": 0.0001,
+            "total_frames": 1,
+            "type": "CYLINDER"
+        },
+        {
+            "Kfriction": 10,
+            "Kpenalty": 0.01,
+            "axis": [
+                0,
+                0,
+                -1
+            ],
+            "center": [
+                0,
+                0,
+                -1
+            ],
+            "height": 2,
+            "name": "cylinder_1",
+            "radius": 0.13,
+            "threshold": 0.0001,
+            "total_frames": 1,
+            "type": "CYLINDER"
+        }
+    ],
+    "obstacles_present": true,
+    "pos_dampingK": 0.005,
+    "rho": 0.0276,
+    "timestepper": "symplecticeulerwrinkles",
+    "timestepper_config": {
+        "amp_vbd_iter": 20,
+        "ampsposupdate": "combined",
+        "bounded_optimizer": 0,
+        "bounded_optimizer_maxiter": 100,
+        "bounded_optimizer_tolerance": 1e-06,
+        "kdamp_amps": 0.05,
+        "kdamp_pos": 0.005,
+        "obstacle_collision_maxiter": 4,
+        "optimizer": 1,
+        "optimizer_tolerance": 1e-06,
+        "optmizer_maxiter": 10,
+        "pos_vbd_iter": 5,
+        "probe_points": 25,
+        "sdf_collider": "basic",
+        "self_collision_ccd": false,
+        "self_collision_threshold": 0.0005,
+        "self_collisions": true,
+        "self_collisions_maxsubsteps": 2,
+        "sim_friction": 1,
+        "substeps": 8
+    },
+    "total_frames": 2000,
+    "wrinkle_self_coll": null
+}

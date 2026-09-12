@@ -1,0 +1,89 @@
+{
+    "Y": 20000,
+    "amp_dampingK": 0.05,
+    "cloth": {
+        "clamped_vertices_": [
+            [
+                8,
+                1,
+                1,
+                1
+            ]
+        ],
+        "clamped_vertices_path": "",
+        "clamped_vertices_path_": "examples/assets/square_mesh/square64x64_2EdgesClamped.txt",
+        "mesh_path": "examples/assets/square_mesh/square32x32.obj",
+        "mesh_path_": "examples/assets/high_res_data/square64x64.obj",
+        "name": "square8x8_cloth_drape_two_edges_fixed",
+        "seam_vertices_path": "",
+        "wrinkle_self_coll": {
+            "softness": 0
+        }
+    },
+    "dt": 0.001,
+    "forces": [
+        {
+            "name": "tfwbending"
+        },
+        {
+            "name": "tfwstretch"
+        },
+        {
+            "gravity": [
+                0,
+                9.8,
+                0
+            ],
+            "name": "tfwgravity"
+        }
+    ],
+    "frictionK": 0,
+    "h": 0.001,
+    "max_iter": 10,
+    "mu": 0.5,
+    "name": "general simulation",
+    "obstacles": [
+        {
+            "Kfriction": 0.3,
+            "Kpenalty": 0.01,
+            "center": [
+                0,
+                -0.6,
+                0
+            ],
+            "name": "ball",
+            "radius": 0.6,
+            "threshold": 1e-05,
+            "type": "SPHERE"
+        }
+    ],
+    "obstacles_present": true,
+    "pos_dampingK": 0.001,
+    "rho": 0.1,
+    "timestepper": "symplecticeulerwrinkles",
+    "timestepper_config": {
+        "amp_vbd_iter": 5,
+        "ampsposupdate": "combined",
+        "bounded_optimizer": 0,
+        "bounded_optimizer_maxiter": 100,
+        "bounded_optimizer_tolerance": 1e-06,
+        "kdamp_amps": 0.05,
+        "kdamp_pos": 0.001,
+        "optimizer": 1,
+        "optimizer_tolerance": 1e-06,
+        "optmizer_maxiter": 100,
+        "pos_vbd_iter": 5,
+        "probe_points": 15,
+        "sdf_collider": "basic",
+        "self_collision_ccd": false,
+        "self_collision_damping": 0.01,
+        "self_collision_stiffness": 0.01,
+        "self_collision_threshold": 0.0005,
+        "self_collisions": false,
+        "self_collisions_maxsubsteps": 1,
+        "substeps": 2,
+        "velcrow_effect": false
+    },
+    "total_frames": 3500,
+    "wrinkle_self_coll": null
+}

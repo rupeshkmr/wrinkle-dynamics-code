@@ -1,0 +1,133 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 21,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "generator": "Ninja",
+      "toolchainFile": "toolchains/clang-toolchain.cmake",
+      "cacheVariables": {
+        "EXPORT_COMPILE_COMMANDS": "ON",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+      }
+    },
+    {
+      "name": "debug",
+      "displayName": "Debug (Clang)",
+      "inherits": "base",
+      "binaryDir": "${sourceDir}/build/debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "ARGUS_ENABLE_MULTITHREADING": "OFF",
+        "ARGUS_DEBUG": "ON",
+        "ARGUS_CHECKPOINT": "OFF",
+        "ARGUS_QUIET": "OFF",
+        "ARGUS_PRINT_DEBINFO": "OFF",
+        "ARGUS_ENABLE_VISUALIZATION": "ON",
+        "CMAKE_POLICY_VERSION_MINIMUM": "3.5"
+      }
+    },
+    {
+      "name": "release-common",
+      "hidden": true,
+      "inherits": "base",
+      "cacheVariables": {
+        "ARGUS_ENABLE_MULTITHREADING": "ON",
+        "CMAKE_POLICY_VERSION_MINIMUM": "3.5",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+      }
+    },
+    {
+      "name": "release",
+      "displayName": "Release (Clang)",
+      "inherits": "release-common",
+      "binaryDir": "${sourceDir}/build/release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_INTERPROCEDURAL_OPTIMIZATION": "TRUE",
+        "ARGUS_CHECKPOINT": "OFF",
+        "ARGUS_QUIET": "ON",
+        "ARGUS_ENABLE_VISUALIZATION": "OFF"
+      }
+    },
+    {
+      "name": "relwithdebinfo",
+      "displayName": "RelWithDebInfo (Clang)",
+      "inherits": "release-common",
+      "binaryDir": "${sourceDir}/build/relwithdebinfo",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "ARGUS_CHECKPOINT": "ON",
+        "ARGUS_ENABLE_VISUALIZATION": "ON",
+        "ARGUS_DEBUG": "OFF",
+        "ARGUS_QUIET": "ON",
+        "ARGUS_PRINT_DEBINFO": "OFF"
+      }
+    },
+    {
+      "name": "apple-silicon-debug",
+      "displayName": "Apple Silicon Debug (arm64)",
+      "inherits": "debug",
+      "binaryDir": "${sourceDir}/build/apple-silicon-debug",
+      "cacheVariables": {
+        "APPLE": "ON",
+        "CMAKE_OSX_ARCHITECTURES": "arm64",
+        "CMAKE_PREFIX_PATH": "$(brew --prefix)"
+      }
+    },
+    {
+      "name": "apple-silicon-relwithdebinfo",
+      "displayName": "Apple Silicon RelWithDebInfo(arm64)",
+      "inherits": "release-common",
+      "binaryDir": "${sourceDir}/build/apple-silicon-relwithdebinfo",
+      "cacheVariables": {
+        "APPLE": "ON",
+        "CMAKE_OSX_ARCHITECTURES": "arm64",
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "ARGUS_CHECKPOINT": "ON",
+        "CMAKE_PREFIX_PATH": "$(brew --prefix)",
+        "ARGUS_ENABLE_VISUALIZATION": "ON",
+        "ARGUS_DEBUG": "OFF",
+        "ARGUS_QUIET": "ON",
+        "ARGUS_PRINT_DEBINFO": "OFF"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "debug-build",
+      "displayName": "Debug (Clang)",
+      "configurePreset": "debug",
+      "jobs": 0
+    },
+    {
+      "name": "release-build",
+      "displayName": "Release (Clang)",
+      "configurePreset": "release",
+      "jobs": 0
+    },
+    {
+      "name": "relwithdebinfo-build",
+      "displayName": "RelWithDebInfo (Clang)",
+      "configurePreset": "relwithdebinfo",
+      "jobs": 0
+    },
+    {
+      "name": "apple-silicon-debug-build",
+      "displayName": "Apple Silicon Debug (arm64)",
+      "configurePreset": "apple-silicon-debug",
+      "jobs": 0
+    },
+    {
+      "name": "apple-silicon-relwithdebinfo-build",
+      "displayName": "Apple Silicon RelWithDebInfo(arm64)",
+      "configurePreset": "apple-silicon-relwithdebinfo",
+      "jobs": 0
+    }
+  ]
+}

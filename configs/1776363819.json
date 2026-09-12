@@ -1,0 +1,68 @@
+{
+    "Y": 10000,
+    "amp_dampingK": 0.05,
+    "cloth": {
+        "clamped_vertices_motion_path": "",
+        "clamped_vertices_path": "examples/assets/square_mesh/squarehighres2EdgesClamped.txt",
+        "clamped_vertices_path_": "examples/assets/square_mesh/square64x64_2EdgesClamped.txt",
+        "mesh_path": "examples/assets/square_mesh/square_highres.obj",
+        "mesh_path_": "examples/assets/high_res_data/square64x64.obj",
+        "name": "square8x8_cloth_drape_two_edges_fixed",
+        "seam_vertices_path": "",
+        "wrinkle_self_coll": {
+            "softness": 0
+        }
+    },
+    "dt": 0.005,
+    "forces": [
+        {
+            "name": "thinshellstretching"
+        },
+        {
+            "name": "thinshellbending"
+        },
+        {
+            "gravity": [
+                0,
+                9.8,
+                0
+            ],
+            "name": "tfwgravity"
+        }
+    ],
+    "frictionK": 0,
+    "h": 0.001,
+    "max_iter": 10,
+    "mu": 0.5,
+    "name": "general simulation",
+    "obstacles_present": false,
+    "pos_dampingK": 0.005,
+    "rho": 0.05,
+    "timestepper": "symplecticeuler",
+    "timestepper_config": {
+        "amp_vbd_iter": 5,
+        "ampsposupdate": "separate",
+        "bounded_optimizer": 0,
+        "bounded_optimizer_maxiter": 100,
+        "bounded_optimizer_tolerance": 1e-06,
+        "kdamp_amps": 0.05,
+        "kdamp_pos": 0.005,
+        "optimizer": 1,
+        "optimizer_tolerance": 1e-06,
+        "optmizer_maxiter": 100,
+        "pos_vbd_iter": 64,
+        "probe_points": 15,
+        "sdf_collider": "basic",
+        "self_collision_ccd": false,
+        "self_collision_damping": 0.01,
+        "self_collision_stiffness": 0.01,
+        "self_collision_threshold": 0.0005,
+        "self_collisions": true,
+        "self_collisions_maxsubsteps": 1,
+        "substeps": 6,
+        "velcrow_effect": false,
+        "wrinkling_enabled": false
+    },
+    "total_frames": 1200,
+    "wrinkle_self_coll": null
+}

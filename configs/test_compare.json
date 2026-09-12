@@ -1,0 +1,64 @@
+{
+  "Y": 20000,
+  "amp_dampingK": 0.05,
+  "cloth": {
+    "clamped_vertices_motion_path": "",
+    "clamped_vertices_path": "",
+    "mesh_path": "examples/assets/square_mesh/square16x16.obj",
+    "name": "square16x16_test_compare",
+    "seam_vertices_path": "",
+    "wrinkle_self_coll": {
+      "softness": 0
+    }
+  },
+  "dt": 0.001,
+  "forces": [
+    {"name": "tfwbending"},
+    {"name": "tfwstretch"},
+    {"gravity": [0, 9.8, 0], "name": "tfwgravity"}
+  ],
+  "frictionK": 0,
+  "h": 0.001,
+  "max_iter": 10,
+  "mu": 0.5,
+  "name": "test_compare",
+  "obstacles": [
+    {
+      "Kfriction": 0.3,
+      "Kpenalty": 0.01,
+      "center": [0, -0.6, 0],
+      "name": "ball",
+      "radius": 0.6,
+      "threshold": 1e-05,
+      "type": "SPHERE"
+    }
+  ],
+  "obstacles_present": true,
+  "pos_dampingK": 0.001,
+  "rho": 0.1,
+  "timestepper": "symplecticeulerwrinkles",
+  "timestepper_config": {
+    "amp_vbd_iter": 5,
+    "ampsposupdate": "combined",
+    "bounded_optimizer": 0,
+    "bounded_optimizer_maxiter": 100,
+    "bounded_optimizer_tolerance": 1e-06,
+    "kdamp_amps": 0.05,
+    "kdamp_pos": 0.001,
+    "optimizer": 1,
+    "optimizer_tolerance": 1e-06,
+    "optmizer_maxiter": 100,
+    "pos_vbd_iter": 5,
+    "probe_points": 15,
+    "sdf_collider": "basic",
+    "self_collision_ccd": false,
+    "self_collision_damping": 0.01,
+    "self_collision_stiffness": 0.01,
+    "self_collision_threshold": 0.0005,
+    "self_collisions": true,
+    "self_collisions_maxsubsteps": 1,
+    "substeps": 2,
+    "velcrow_effect": false
+  },
+  "total_frames": 50
+}

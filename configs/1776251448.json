@@ -1,0 +1,111 @@
+{
+    "Y": 60000,
+    "amp_dampingK": 0.005,
+    "animations": [
+        {
+            "center": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "indices_path": "examples/assets/cylinder_rotating/cylinder_16x16_rotationVerts.txt",
+            "indices_path_": "examples/assets/cylinder_rotating/cylinder_16x16_withSeams_rotationVerts.txt",
+            "keyframes": [
+                {
+                    "frame": 0,
+                    "rotation_euler": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "frame": 750,
+                    "rotation_euler": [
+                        0.0,
+                        0.0,
+                        60.0
+                    ]
+                }
+            ],
+            "type": "vertex_rotation"
+        }
+    ],
+    "cloth": {
+        "clamped_vertices_motion_path": "",
+        "clamped_vertices_path": "examples/assets/cylinder_rotating/cylinder_16x16_clampedVerts.txt",
+        "init_mesh_path": "examples/assets/cylinder_rotating/cylinder_16x16_init.obj",
+        "mesh_path": "examples/assets/cylinder_rotating/cylinder_16x16.obj",
+        "name": "cylinder_twist",
+        "seam_vertices_path": "examples/assets/cylinder_rotating/cylinder_16x16_seamVerts.txt",
+        "wrinkle_self_coll": {
+            "softness": 0
+        }
+    },
+    "dt": 0.001,
+    "forces": [
+        {
+            "name": "tfwstretch"
+        },
+        {
+            "name": "tfwbending"
+        }
+    ],
+    "frictionK": 0.0,
+    "h": 0.0001,
+    "max_iter": 10,
+    "mu": 0.25,
+    "name": "general simulation",
+    "obstacles": [
+        {
+            "Kfriction": 0,
+            "Kpenalty": 0.01,
+            "axis": [
+                0,
+                0,
+                1
+            ],
+            "center": [
+                0,
+                0,
+                0
+            ],
+            "height": 2,
+            "name": "cylinder",
+            "radius": 0.2,
+            "threshold": 0.0001,
+            "total_frames": 1,
+            "type": "CYLINDER"
+        }
+    ],
+    "obstacles_present": true,
+    "pos_dampingK": 0.001,
+    "rho": 0.0276,
+    "timestepper": "symplecticeulerwrinkles",
+    "timestepper_config": {
+        "amp_vbd_iter": 20,
+        "ampsposupdate": "combined",
+        "bounded_optimizer": 0,
+        "bounded_optimizer_maxiter": 100,
+        "bounded_optimizer_tolerance": 1e-06,
+        "kdamp_amps": 0.005,
+        "kdamp_pos": 0.001,
+        "optimizer": 1,
+        "optimizer_tolerance": 1e-06,
+        "optmizer_maxiter": 10,
+        "pos_vbd_iter": 10,
+        "probe_points": 15,
+        "sdf_collider": "basic",
+        "self_collision_ccd": false,
+        "self_collision_damping": 0.0001,
+        "self_collision_stiffness": 0.01,
+        "self_collision_threshold": 0.0005,
+        "self_collisions": false,
+        "self_collisions_maxsubsteps": 1,
+        "sim_friction": 1,
+        "substeps": 8,
+        "velcrow_effect": false
+    },
+    "total_frames": 2000,
+    "wrinkle_self_coll": null
+}
