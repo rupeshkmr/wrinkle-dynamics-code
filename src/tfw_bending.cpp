@@ -1955,7 +1955,7 @@ namespace argus
 
 			// M2
 			Matrix22 M2 = a * Ibarinv * dphidphiT;
-			energy += 0.5 * SVNormSquared(alpha, beta, M2);
+			energy += 0.5  *bendCoeff * quadWeight * SVNormSquared(alpha, beta, M2);
 			if (forces)
 			{
 				Matrix22 dM2SVdM2 = alpha * M2.trace() * Matrix22::Identity() + 2 * beta * M2;
