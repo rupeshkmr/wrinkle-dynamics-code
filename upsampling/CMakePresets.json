@@ -1,0 +1,39 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "RelWithDebInfo",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/relwithdebinfo",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                "EXPORT_COMPILE_COMMANDS": "On",
+                "CMAKE_POLICY_VERSION_MINIMUM": "3.5"
+            }
+        },
+        {
+            "name": "Debug",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/debug",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "EXPORT_COMPILE_COMMANDS": "On",
+                "CMAKE_POLICY_VERSION_MINIMUM": "3.5"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "DebugBuild",
+            "description": "",
+            "displayName": "",
+            "configurePreset": "Debug"
+        },
+        {
+            "name": "RelWithDebInfoBuild",
+            "description": "",
+            "displayName": "",
+            "configurePreset": "RelWithDebInfo"
+        }
+    ]
+}

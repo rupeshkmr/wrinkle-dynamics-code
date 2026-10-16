@@ -1,0 +1,107 @@
+{
+    "Y": 20000,
+    "amp_dampingK": 0.0001,
+    "cloth": {
+        "clamped_vertices_path": "",
+        "mesh_path": "examples/assets/square_mesh/square_highres.obj",
+        "mesh_path_": "examples/assets/square_mesh/square32x32.obj",
+        "motion": [
+            {
+                "mode": "t",
+                "updates": [
+                    0,
+                    0.0,
+                    0
+                ]
+            },
+            {
+                "mode": "s",
+                "updates": [
+                    1,
+                    1,
+                    1
+                ]
+            }
+        ],
+        "name": "square32x32_cloth_drape_over_sphere",
+        "seam_vertices_path": "",
+        "wrinkle_self_coll": {
+            "softness": 0
+        }
+    },
+    "dt": 0.005,
+    "forces": [
+        {
+            "name": "thinshellstretching"
+        },
+        {
+            "name": "thinshellbending"
+        },
+        {
+            "gravity": [
+                0,
+                9.8,
+                0
+            ],
+            "name": "tfwgravity"
+        }
+    ],
+    "frictionK": 0.0,
+    "h": 0.001,
+    "max_iter": 10,
+    "mu": 0.5,
+    "name": "general simulation",
+    "obstacles": [
+        {
+            "Kfriction": 0.6,
+            "Kpenalty": 0.01,
+            "center": [
+                0,
+                -0.6,
+                0
+            ],
+            "name": "ball",
+            "radius": 0.6,
+            "threshold": 0.0001,
+            "type": "SPHERE"
+        }
+    ],
+    "obstacles_present": true,
+    "old_config_that_worked_only_changes": {
+        "Y": 20000,
+        "dt": 0.005,
+        "frictionK": 0.7,
+        "h": 0.001,
+        "mu": 0.5,
+        "rho": 0.1,
+        "total_frames": 1000
+    },
+    "pos_dampingK": 0.01,
+    "rho": 0.1,
+    "timestepper": "symplecticeuler",
+    "timestepper_config": {
+        "amp_vbd_iter": 20,
+        "ampsposupdate": "separate",
+        "bounded_optimizer": 0,
+        "bounded_optimizer_maxiter": 100,
+        "bounded_optimizer_tolerance": 1e-06,
+        "kdamp_amps": 0.0001,
+        "kdamp_pos": 0.01,
+        "optimizer": 1,
+        "optimizer_tolerance": 1e-06,
+        "optmizer_maxiter": 100,
+        "pos_vbd_iter": 64,
+        "probe_points": 25,
+        "sdf_collider": "basic",
+        "self_collision_damping": 0,
+        "self_collision_stiffness": 0,
+        "self_collision_threshold": 0.0005,
+        "self_collisions": true,
+        "self_collisions_maxsubsteps": 4,
+        "sim_friction": 1,
+        "substeps": 10,
+        "velcrow_effect": false
+    },
+    "total_frames": 2000,
+    "wrinkle_self_coll": null
+}

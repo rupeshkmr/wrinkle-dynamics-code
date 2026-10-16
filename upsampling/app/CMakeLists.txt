@@ -1,0 +1,3 @@
+# add_subdirectory(WrinkleInterpolationGui)
+add_subdirectory(WrinkleInterpolationCli)
+# add_subdirectory(WrinkleInterpolationTwistedCylinder)
