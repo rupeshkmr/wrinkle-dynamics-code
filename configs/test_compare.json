@@ -1,6 +1,7 @@
 {
   "Y": 20000,
   "amp_dampingK": 0.05,
+  "animations": [],
   "cloth": {
     "clamped_vertices_motion_path": "",
     "clamped_vertices_path": "",
@@ -47,7 +48,7 @@
     "kdamp_pos": 0.001,
     "optimizer": 1,
     "optimizer_tolerance": 1e-06,
-    "optmizer_maxiter": 100,
+    "optimizer_maxiter": 100,
     "pos_vbd_iter": 5,
     "probe_points": 15,
     "sdf_collider": "basic",

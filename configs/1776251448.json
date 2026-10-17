@@ -92,7 +92,7 @@
         "kdamp_pos": 0.001,
         "optimizer": 1,
         "optimizer_tolerance": 1e-06,
-        "optmizer_maxiter": 10,
+        "optimizer_maxiter": 10,
         "pos_vbd_iter": 10,
         "probe_points": 15,
         "sdf_collider": "basic",

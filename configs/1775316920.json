@@ -1,12 +1,13 @@
 {
     "Y": 10000,
     "amp_dampingK": 0.05,
+    "animations": [],
     "cloth": {
         "clamped_vertices_path": "examples/assets/square_mesh/square32x322EdgesClamped.txt",
         "clamped_vertices_path_": "examples/assets/square_mesh/square64x64_2EdgesClamped.txt",
         "mesh_path": "examples/assets/square_mesh/square32x32.obj",
         "mesh_path_": "examples/assets/high_res_data/square64x64.obj",
-        "name": "square8x8_cloth_drape_two_edges_fixed",
+        "name": "square32x32_cloth_drape_two_adjacent_edges_fixed",
         "seam_vertices_path": "",
         "wrinkle_self_coll": {
             "softness": 0
@@ -48,7 +49,7 @@
         "kdamp_pos": 0.005,
         "optimizer": 1,
         "optimizer_tolerance": 1e-06,
-        "optmizer_maxiter": 100,
+        "optimizer_maxiter": 100,
         "pos_vbd_iter": 5,
         "probe_points": 15,
         "sdf_collider": "basic",

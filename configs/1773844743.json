@@ -1,6 +1,7 @@
 {
     "Y": 20000,
     "amp_dampingK": 0.0001,
+    "animations": [],
     "cloth": {
         "clamped_vertices_path": "",
         "mesh_path": "examples/assets/square_mesh/squarex16x16.obj",
@@ -92,7 +93,7 @@
         "kdamp_pos": 0.01,
         "optimizer": 1,
         "optimizer_tolerance": 1e-06,
-        "optmizer_maxiter": 100,
+        "optimizer_maxiter": 100,
         "pos_vbd_iter": 5,
         "probe_points": 25,
         "sdf_collider": "quadrature",

@@ -108,13 +108,13 @@ The driver executable takes a JSON configuration file and execution flags:
 ### Example Configurations
 All sample configs are located in the `configs/` directory.
 
-- **Cloth Drape over Sphere (16x16 coarse mesh)**:
-  ```bash
-  ./build/bin/wrinkle_dynamics configs/1773844743.json --gui
-  ```
-- **Two-Edges Clamped Square Cloth**:
+- **Cloth Drape over Sphere (16x16 coarse mesh, symplectic Euler)**:
   ```bash
   ./build/bin/wrinkle_dynamics configs/1779268717.json --gui
+  ```
+- **Two Adjacent Edges Clamped Square Cloth (32x32 coarse mesh)**:
+  ```bash
+  ./build/bin/wrinkle_dynamics configs/1775316920.json --gui
   ```
 - **Rotating Cylinder Twist**:
   ```bash
@@ -128,7 +128,7 @@ All sample configs are located in the `configs/` directory.
   ```bash
   ./build/bin/wrinkle_dynamics configs/1790249681.json --gui
   ```
-- **Drape without Coupling (ablation, `tfwstvkhybridstretch`)**:
+- **Sphere Drape with Hybrid Stretching (stretching-feedback ablation, `tfwstvkhybridstretch`; TFW bending retained)**:
   ```bash
   ./build/bin/wrinkle_dynamics configs/1790250839.json --gui
   ```
@@ -136,6 +136,18 @@ All sample configs are located in the `configs/` directory.
   ```bash
   ./build/bin/wrinkle_dynamics configs/test_compare.json --nogui
   ```
+- **Cloth Drape over Sphere, VBD Variant (16x16 coarse mesh)**:
+  ```bash
+  ./build/bin/wrinkle_dynamics configs/1773844743.json --gui
+  ```
+
+The symplectic sphere example uses frame `dt=0.001` with two substeps
+(integration step 0.0005 s), basic contact, and obstacle `Kfriction=0.3`.
+The VBD variant uses a different timestep/contact setup. Each example's solver
+is selected by its `timestepper` field. For symplectic runs, the per-face frequency
+solve currently uses a hard-coded tolerance and iteration limit in
+`Sheet::optimizeParallelEnergies`; the generic `optimizer_*` fields do not set
+that solve's stopping criteria.
 
 ---
 
