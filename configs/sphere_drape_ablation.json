@@ -1,6 +1,7 @@
 {
     "Y": 20000,
     "amp_dampingK": 0.05,
+    "animations": [],
     "cloth": {
         "clamped_vertices_": [
             [
@@ -10,11 +11,11 @@
                 1
             ]
         ],
+        "clamped_vertices_motion_path": "",
         "clamped_vertices_path": "",
         "clamped_vertices_path_": "examples/assets/square_mesh/square64x64_2EdgesClamped.txt",
         "mesh_path": "examples/assets/square_mesh/square32x32.obj",
-        "mesh_path_": "examples/assets/high_res_data/square64x64.obj",
-        "name": "square8x8_cloth_drape_two_edges_fixed",
+        "name": "square32x32_sphere_drape_hybrid_stretching",
         "seam_vertices_path": "",
         "wrinkle_self_coll": {
             "softness": 0
@@ -23,10 +24,10 @@
     "dt": 0.001,
     "forces": [
         {
-            "name": "tfwtfthybridstretch"
+            "name": "tfwbending"
         },
         {
-            "name": "tfwbending"
+            "name": "tfwstvkhybridstretch"
         },
         {
             "gravity": [
@@ -41,7 +42,7 @@
     "h": 0.001,
     "max_iter": 10,
     "mu": 0.5,
-    "name": "general simulation",
+    "name": "ablation",
     "obstacles": [
         {
             "Kfriction": 0.3,
@@ -53,7 +54,7 @@
             ],
             "name": "ball",
             "radius": 0.6,
-            "threshold": 0.0001,
+            "threshold": 1e-05,
             "type": "SPHERE"
         }
     ],
@@ -71,7 +72,7 @@
         "kdamp_pos": 0.001,
         "optimizer": 1,
         "optimizer_tolerance": 1e-06,
-        "optmizer_maxiter": 100,
+        "optimizer_maxiter": 100,
         "pos_vbd_iter": 5,
         "probe_points": 15,
         "sdf_collider": "basic",
@@ -79,8 +80,8 @@
         "self_collision_damping": 0.01,
         "self_collision_stiffness": 0.01,
         "self_collision_threshold": 0.0005,
-        "self_collisions": false,
-        "self_collisions_maxsubsteps": 2,
+        "self_collisions": true,
+        "self_collisions_maxsubsteps": 1,
         "substeps": 2,
         "velcrow_effect": false
     },

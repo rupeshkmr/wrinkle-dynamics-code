@@ -1,6 +1,6 @@
 {
     "Y": 12000,
-    "amp_dampingK": 0.01,
+    "amp_dampingK": 0.05,
     "animations": [
         {
             "keyframes": [
@@ -151,13 +151,14 @@
             ]
         ],
         "clamped_vertices_motion_path": "",
-        "clamped_vertices_motion_path_": "examples/assets/arm/arm_highres_new_motion.txt",
         "clamped_vertices_path": "",
-        "clamped_vertices_path_": "examples/assets/arm/arm_highres_new_clampedVerts.txt",
-        "mesh_path": "scripts/gen_shapes/centered_cylinder.obj",
-        "mesh_path_": "examples/assets/arm/arm_1000verts.obj",
+        "clamped_vertices_path_": "examples/assets/arm/arm_16x16_clampedVerts.txt",
+        "init_mesh_path_": "examples/assets/arm/armx_16x16_init.obj",
+        "mesh_path": "examples/assets/arm/arm_1000verts.obj",
+        "mesh_path_": "examples/assets/arm/armx_16x16_withseams.obj",
         "name": "arm_rotating",
         "seam_vertices_path": "",
+        "seam_vertices_path_": "examples/assets/arm/armx_16x16_seamVerts.txt",
         "wrinkle_self_coll": {
             "softness": 0
         }
@@ -165,10 +166,10 @@
     "dt": 0.008,
     "forces": [
         {
-            "name": "thinshellstretching"
+            "name": "tfwstretch"
         },
         {
-            "name": "thinshellbending"
+            "name": "tfwbending"
         },
         {
             "gravity": [
@@ -183,10 +184,10 @@
     "h": 0.001,
     "max_iter": 10,
     "mu": 0.1,
-    "name": "general simulation",
+    "name": "Sleeve",
     "obstacles": [
         {
-            "Kfriction": 0.5,
+            "Kfriction": 0.0,
             "Kpenalty": 0.01,
             "center": [
                 0,
@@ -194,12 +195,12 @@
                 0
             ],
             "name": "ball",
-            "radius": 0.16,
+            "radius": 0.13,
             "threshold": 0.0001,
-            "type": "SPHERE_"
+            "type": "SPHERE"
         },
         {
-            "Kfriction": 0.9,
+            "Kfriction": 10,
             "Kpenalty": 0.01,
             "axis": [
                 0,
@@ -219,7 +220,7 @@
             "type": "CYLINDER"
         },
         {
-            "Kfriction": 0.9,
+            "Kfriction": 10,
             "Kpenalty": 0.01,
             "axis": [
                 0,
@@ -240,30 +241,30 @@
         }
     ],
     "obstacles_present": true,
-    "pos_dampingK": 0.0005,
+    "pos_dampingK": 0.005,
     "rho": 0.0276,
-    "timestepper": "symplecticeuler",
+    "timestepper": "symplecticeulerwrinkles",
     "timestepper_config": {
         "amp_vbd_iter": 20,
         "ampsposupdate": "combined",
         "bounded_optimizer": 0,
         "bounded_optimizer_maxiter": 100,
         "bounded_optimizer_tolerance": 1e-06,
-        "kdamp_amps": 0.01,
-        "kdamp_pos": 0.0005,
+        "kdamp_amps": 0.05,
+        "kdamp_pos": 0.005,
         "obstacle_collision_maxiter": 4,
         "optimizer": 1,
         "optimizer_tolerance": 1e-06,
-        "optmizer_maxiter": 10,
+        "optimizer_maxiter": 10,
         "pos_vbd_iter": 5,
         "probe_points": 25,
         "sdf_collider": "basic",
         "self_collision_ccd": false,
         "self_collision_threshold": 0.0005,
-        "self_collisions": false,
+        "self_collisions": true,
         "self_collisions_maxsubsteps": 2,
         "sim_friction": 1,
-        "substeps": 60
+        "substeps": 8
     },
     "total_frames": 2000,
     "wrinkle_self_coll": null

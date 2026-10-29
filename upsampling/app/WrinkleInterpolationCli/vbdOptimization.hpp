@@ -350,7 +350,9 @@ void optimizeAndSaveZvalsVBDObj(
 
               H *= config.meshThickness * config.beta / 4.0;
 
+              // double dampingK = 15; 
               double dampingK = 15; // works for cloth drape under gravity
+
               // double dampingK = 1 / config.timeStep;
               Complex zNext = prevZvals[v_idx] *
                               std::pow(prevZvals[v_idx] / prev2Zvals[v_idx],
