@@ -126,7 +126,7 @@ All sample configs are located in the `configs/` directory.
   ```
 - **Sphere Drape with Hybrid Stretching (stretching-feedback ablation, `tfwstvkhybridstretch`; TFW bending retained)**:
   ```bash
-  ./build/bin/wrinkle_dynamics configs/1790250839.json --gui
+  ./build/bin/wrinkle_dynamics configs/sphere_drape_ablation.json --gui
   ```
 Each example's solver is selected by its `timestepper` field. For symplectic runs, the per-face frequency
 solve currently uses a hard-coded tolerance and iteration limit in
