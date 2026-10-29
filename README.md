@@ -136,15 +136,9 @@ All sample configs are located in the `configs/` directory.
   ```bash
   ./build/bin/wrinkle_dynamics configs/test_compare.json --nogui
   ```
-- **Cloth Drape over Sphere, VBD Variant (16x16 coarse mesh)**:
-  ```bash
-  ./build/bin/wrinkle_dynamics configs/1773844743.json --gui
-  ```
-
 The symplectic sphere example uses frame `dt=0.001` with two substeps
 (integration step 0.0005 s), basic contact, and obstacle `Kfriction=0.3`.
-The VBD variant uses a different timestep/contact setup. Each example's solver
-is selected by its `timestepper` field. For symplectic runs, the per-face frequency
+Each example's solver is selected by its `timestepper` field. For symplectic runs, the per-face frequency
 solve currently uses a hard-coded tolerance and iteration limit in
 `Sheet::optimizeParallelEnergies`; the generic `optimizer_*` fields do not set
 that solve's stopping criteria.
